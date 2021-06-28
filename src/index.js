@@ -5,6 +5,7 @@ import Location from "./LocationComponent";
 import UserForm from "./UserForm";
 import ScotchInfoBar from "./ScotchInfoBar";
 import "./styles.css";
+import { FormProvider } from "./FormContext";
 
 function App() {
   return (
@@ -31,4 +32,9 @@ function App() {
 
 // Wrap parent component with context provider
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <FormProvider>
+    <App />
+  </FormProvider>,
+  rootElement
+);
